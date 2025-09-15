@@ -1,0 +1,91 @@
+site_name: "Географическая энциклопедия"
+site_description: "Изучайте страны мира, их особенности и географические термины"
+site_author: "Команда географов"
+
+# Важные настройки
+use_directory_urls: true
+strict: true
+
+# Тема оформления - СИНИЕ ТОНА
+theme:
+  name: material
+  custom_dir: docs/overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  palette:
+    # Основная светлая тема - синие тона
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+    # Темная тема - тоже синие тона
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Темная тема
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/images/logo1.png
+  favicon: assets/images/logo1.png
+
+# Плагины (ТОЛЬКО те, что установлены)
+plugins:
+  - search
+
+# НАВИГАЦИЯ
+nav:
+  - Главная: index.md
+  - Термины:
+    - География: terms/geography.md
+    - Глоссарий: terms/glossary.md
+  - Европа:
+     - Основное: continents/europe.md
+     - Беларусь: countries/france.md
+  - Азия:
+     - Основное: continents/asia.md
+  - Африка:
+     - Основное: continents/africa.md
+  - Северная Америка:
+     - Основное: continents/north-america.md
+  - Южная Америка:
+     - Основное: continents/south-america.md
+  - Австралия и Океания:
+     - Основное: continents/oceania.md
+
+# Расширения Markdown
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 2
+
+# Кастомные стили и скрипты
+extra_css:
+  - assets/css/custom.css
+extra_javascript:
+  - assets/js/main.js
+
+
+# Настройки для сборки
+docs_dir: 'docs'
